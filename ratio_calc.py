@@ -36,7 +36,7 @@ def gain_or_loss(stock_data):
     # Get the list of ticker symbols
     ticker_list = stock_data["Ticker Symbol"]
 
-    # Create a new dataframe with column "ROI" that shows the Return On Investment based on the formula
+    # Create a new dataframe with column "Gain/Loss ratio" that shows the Gain/Loss based on the formula
     return_data = pd.DataFrame({"Gain/Loss": current_price - purchase_price})
 
     # Join the ticker list to the result dataframe and return it
@@ -56,7 +56,7 @@ def break_even_price(stock_data, roi):
     # Get the list of ticker symbols
     ticker_list = stock_data["Ticker Symbol"]
 
-    # Create a new dataframe with column "ROI" that shows the Return On Investment based on the formula
+    # Create a new dataframe with column "Break Even Price" that shows the Break even price based on the formula
     data_comp = (1 + (roi["ROI"] / 100))
     return_data = pd.DataFrame({"Break Even Price": purchase_price / data_comp})
 
